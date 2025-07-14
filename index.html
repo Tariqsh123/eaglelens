@@ -327,35 +327,60 @@
     <div id="after-header-marquee-main-container">
       <div id="after-header-marquee-second-container">
         <h4>Relied on by more than 1,000 businesses</h4>
-        <div id="marquee-container">
-          <div class="marquee-track">
-            <img src="https://img.icons8.com/?size=100&id=6S0oIdwbOlT5&format=png&color=1A1A1A" alt="Logo 1"/>
-            <img src="https://img.icons8.com/?size=100&id=qUml56HS8WKJ&format=png&color=1A1A1A" alt="Logo 2"/>
-            <img src="https://img.icons8.com/?size=100&id=3XCKMge4F4xr&format=png&color=1A1A1A" alt="Logo 3"/>
-            <img src="https://img.icons8.com/?size=100&id=91gew5i8pKas&format=png&color=1A1A1A" alt="Logo 4"/>
-            <img src="https://img.icons8.com/?size=100&id=51709&format=png&color=1A1A1A" alt="logo 5" />
-            <img src="https://img.icons8.com/?size=100&id=6S0oIdwbOlT5&format=png&color=1A1A1A" alt="Logo 1"/>
-            <img src="https://img.icons8.com/?size=100&id=qUml56HS8WKJ&format=png&color=1A1A1A" alt="Logo 2"/>
-            <img src="https://img.icons8.com/?size=100&id=3XCKMge4F4xr&format=png&color=1A1A1A" alt="Logo 3"/>
-            <img src="https://img.icons8.com/?size=100&id=91gew5i8pKas&format=png&color=1A1A1A" alt="Logo 4"/>
-            <img src="https://img.icons8.com/?size=100&id=51709&format=png&color=1A1A1A" alt="logo 5" />
-            <img src="https://img.icons8.com/?size=100&id=6S0oIdwbOlT5&format=png&color=1A1A1A" alt="Logo 1"/>
-            <img src="https://img.icons8.com/?size=100&id=qUml56HS8WKJ&format=png&color=1A1A1A" alt="Logo 2"/>
-            <img src="https://img.icons8.com/?size=100&id=3XCKMge4F4xr&format=png&color=1A1A1A" alt="Logo 3"/>
-            <img src="https://img.icons8.com/?size=100&id=91gew5i8pKas&format=png&color=1A1A1A" alt="Logo 4"/>
-            <img src="https://img.icons8.com/?size=100&id=51709&format=png&color=1A1A1A" alt="logo 5" />
-            <img src="https://img.icons8.com/?size=100&id=6S0oIdwbOlT5&format=png&color=1A1A1A" alt="Logo 1"/>
-            <img src="https://img.icons8.com/?size=100&id=qUml56HS8WKJ&format=png&color=1A1A1A" alt="Logo 2"/>
-            <img src="https://img.icons8.com/?size=100&id=3XCKMge4F4xr&format=png&color=1A1A1A" alt="Logo 3"/>
-            <img src="https://img.icons8.com/?size=100&id=91gew5i8pKas&format=png&color=1A1A1A" alt="Logo 4"/>
-            <img src="https://img.icons8.com/?size=100&id=51709&format=png&color=1A1A1A" alt="logo 5" />
-            <img src="https://img.icons8.com/?size=100&id=6S0oIdwbOlT5&format=png&color=1A1A1A" alt="Logo 1"/>
-            <img src="https://img.icons8.com/?size=100&id=qUml56HS8WKJ&format=png&color=1A1A1A" alt="Logo 2"/>
-            <img src="https://img.icons8.com/?size=100&id=3XCKMge4F4xr&format=png&color=1A1A1A" alt="Logo 3"/>
-            <img src="https://img.icons8.com/?size=100&id=91gew5i8pKas&format=png&color=1A1A1A" alt="Logo 4"/>
-            <img src="https://img.icons8.com/?size=100&id=51709&format=png&color=1A1A1A" alt="logo 5" />
-          </div>
-        </div>
+        <div id="after-header-marquee-second-bottom-container">
+          <div class="marquee-wrapper">
+    <div class="marquee-item">
+      <img src="https://img.icons8.com/?size=100&id=eoxMN35Z6JKg&format=png&color=000000" alt="Logo">
+    </div>
+    <div class="marquee-item">
+      <img src="https://img.icons8.com/?size=100&id=zQjzFjPpT2Ek&format=png&color=000000" alt="Logo">
+    </div>
+    <div class="marquee-item">
+      <img src="https://img.icons8.com/?size=100&id=ij6f4GUUwLE8&format=png&color=000000" alt="Logo">
+    </div>
+    <div class="marquee-item">
+      <img src="https://img.icons8.com/?size=100&id=NMHBRPq7cNs2&format=png&color=000000" alt="Logo">
+    </div>
+    <div class="marquee-item">
+      <img src="https://img.icons8.com/?size=100&id=S7tOM4UjUKfO&format=png&color=000000" alt="Logo">
+    </div>
+  </div>
+</div>
+<script>
+  const wrapper = document.querySelector('.marquee-wrapper');
+const items = wrapper.children;
+
+function shufflePositions() {
+  // Fade out all items
+  for (let item of items) {
+    item.style.transition = 'opacity 0.5s ease';
+    item.style.opacity = '0';
+  }
+
+  setTimeout(() => {
+    // Move first item to third position (index 2)
+    const first = wrapper.children[0];
+    wrapper.removeChild(first);
+    // Insert it before the item at index 2 (or at the end if less than 2 items)
+    if (wrapper.children.length >= 2) {
+      wrapper.insertBefore(first, wrapper.children[2]);
+    } else {
+      wrapper.appendChild(first);
+    }
+
+    // Fade in all items
+    for (let item of wrapper.children) {
+      item.style.opacity = '1';
+    }
+  }, 500); // wait for fade out before reordering
+}
+
+// Start the shuffle every 5 seconds
+setInterval(shufflePositions, 5000);
+
+</script>
+
+       
       </div>
     </div>
 
@@ -364,7 +389,9 @@
     <!-- After HEader MAin  -->
     <div id="after-header-main-container">
       <div id="after-header-second-main-container">
-        <div id="after-header-left-container"></div>
+        <div id="after-header-left-container">
+          <video src="videos/Introduce-section-left-image.mp4" autoplay muted loop></video>
+        </div>
         <div id="after-header-right-container">
           <h2>Introducing VisionX</h2>
           <p>Create tailored Video AI Agents and turn insights into action — just by talking naturally. </p>
@@ -375,100 +402,98 @@
     <!-- After HEader MAin  END -->
 
     <!-- Why Choose Us main container -->
-    <div id="choose-us-heading-container">
-      <h2>Why Businesses Choose Eagle Lens</h2>
-    </div>
-    <!-- 1 -->
-    <div id="Choose-us-box-main">
-      <div id="Choose-us-box-inner">
-        <div id="choose-us-box-text-container">
-        <h3>Reduce Workplace Injuries by 40%</h3>
-        <p>Identify root causes, improve employee training, and prevent incidents with predictive alerts.</p>
-        </div>
-        <div id="choose-us-box-video-container">
-          <video src="videos/hero-section-bg.mp4" autoplay muted loop></video>
-        </div>
-      </div>
-    </div>
-    <!-- 1 end-->
-    <!-- 2 -->
-    <div id="Choose-us-box-main">
-      <div id="Choose-us-box-inner" class="Choose-us-box-inner-reverse">
-        <div id="choose-us-box-text-container">
-          <h3>Resolve Incidents 80% Faster</h3>
-          <p>Quickly address and prevent issues with streamlined, AI-driven workflows.</p>
+  <section id="choose-us-section">
+  <h2 class="section-title">Why Businesses Choose Eagle Lens</h2>
 
-        </div>
-        <div id="choose-us-box-video-container">
-          <video src="videos/hero-section-bg.mp4" autoplay muted loop></video>
-        </div>
-      </div>
+  <div class="choose-us-card">
+    <div class="choose-us-text">
+      <h3>Reduce Workplace Injuries by 40%</h3>
+      <p>Identify root causes, improve employee training, and prevent incidents with predictive alerts.</p>
     </div>
-    <!-- 2 end-->
-    <!-- 3 -->
-    <div id="Choose-us-box-main">
-      <div id="Choose-us-box-inner">
-        <div id="choose-us-box-text-container">
-          <h3>15% Increase in Throughput</h3>
-          <p>Eliminate bottlenecks, boost performance, and improve accountability across all locations.</p>
+    <div class="choose-us-video">
+      <video src="videos/Why-choose-card-1.mp4" autoplay muted loop></video>
+    </div>
+  </div>
 
-        </div>
-        <div id="choose-us-box-video-container">
-          <video src="videos/hero-section-bg.mp4" autoplay muted loop></video>
-        </div>
-      </div>
+  <div class="choose-us-card reverse">
+    <div class="choose-us-text">
+      <h3>Resolve Incidents 80% Faster</h3>
+      <p>Quickly address and prevent issues with streamlined, AI-driven workflows.</p>
     </div>
+    <div class="choose-us-video">
+      <video src="videos/Why-choose-card-2.mp4" autoplay muted loop></video>
+    </div>
+  </div>
+
+  <div class="choose-us-card">
+    <div class="choose-us-text">
+      <h3>15% Increase in Throughput</h3>
+      <p>Eliminate bottlenecks, boost performance, and improve accountability across all locations.</p>
+    </div>
+    <div class="choose-us-video">
+      <video src="videos/Why-choose-card-3.mp4" autoplay muted loop></video>
+    </div>
+  </div>
+</section>
+
     <!-- 3 end-->
 
     <!-- Why Choose Us main container End -->
 
     <!-- Why Future main container -->
     <div id="future-heading-container">
-      <h2>Prepare Your Organization for What’s Next</h2>
-    </div>
+  <h2>Prepare Your Organization for What’s Next</h2>
+</div>
 
-    <!-- 1 -->
-    <div id="future-box-main">
-      <div id="future-box-inner">
-        <div id="future-box-text-container">
-          <h3>Easy Camera Setup</h3>
-          <p>Use your existing IP cameras or get new ones from us. Most customers are fully set up in just minutes.</p>
-        </div>
-        <div id="future-box-video-container">
-          <img src="images/future-box-1.webp" alt="" />
-        </div>
-      </div>
+<div id="future-box-main">
+  <div id="future-box-inner">
+    <div id="future-box-text-container">
+      <h3>Easy Camera Setup</h3>
+      <p>Use your existing IP cameras or get new ones from us. Most customers are fully set up in just minutes.</p>
     </div>
-    <!-- 1 end-->
-
-    <!-- 2 -->
-    <div id="future-box-main">
-      <div id="future-box-inner" class="future-box-inner-reverse">
-        <div id="future-box-text-container">
-          <h3>Flexible Integration</h3>
-          <p>Connect Spot AI with your existing tools and sensors to bring video data into your current workflows.</p>
-        </div>
-        <div id="future-box-video-container">
-          <img src="images/future-box-2.webp" alt="" />
-        </div>
-      </div>
+    <div id="future-box-video-container">
+      <img src="images/future-box-1.jpg" alt="Easy Camera Setup" />
     </div>
-    <!-- 2 end-->
+  </div>
 
-    <!-- 3 -->
-    <div id="future-box-main">
-      <div id="future-box-inner">
-        <div id="future-box-text-container">
-         <h3>Next-Gen Video AI</h3>
-         <p>Engineered for precision, our video models are optimized to solve real-world challenges across industries.</p>
-        </div>
-        <div id="future-box-video-container">
-          <img src="images/future-box-3.webp" alt="" />
-        </div>
-      </div>
+  <div id="future-box-inner" class="future-box-inner-reverse">
+    <div id="future-box-text-container">
+      <h3>Flexible Integration</h3>
+      <p>Connect Spot AI with your existing tools and sensors to bring video data into your current workflows.</p>
     </div>
-    <!-- 3 end-->
+    <div id="future-box-video-container">
+      <img src="images/future-box-2.jpg" alt="Flexible Integration" />
+    </div>
+  </div>
 
+  <div id="future-box-inner">
+    <div id="future-box-text-container">
+      <h3>Next-Gen Video AI</h3>
+      <p>Engineered for precision, our video models are optimized to solve real-world challenges across industries.</p>
+    </div>
+    <div id="future-box-video-container">
+      <img src="images/future-box-3.jpg" alt="Next-Gen Video AI" />
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const boxes = document.querySelectorAll('#future-box-inner');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  boxes.forEach(box => observer.observe(box));
+});
+</script>
     <!-- Why Future main container End -->
 
     <!-- Video AI Platform -->
@@ -561,8 +586,8 @@
     <!-- DATA Review Process -->
     <div id="data-review-process-main-container">
       <div id="data-review-process-inner-container">
-        <h2>Trusted by 75,000+ Cameras in the Field</h2>
-        <h4>1 Billion+ Hours of Smart Video Analyzed</h4>
+        <h2>Trusted by 30,000+ Cameras in the Field</h2>
+        <h4>5 Million+ Hours of Smart Video Analyzed</h4>
       </div>
     </div>
     <!-- DATA Review Process End -->
@@ -586,50 +611,51 @@
     <!-- Badge Section End -->
 
     <!-- Guide Video Section -->
-    <div id="guide-video-main-container">
-      <div id="guide-video-inner-container">
-        <div id="guide-video-heading-container">
-         <h2>A Complete Guide to Video AI</h2>>
+   <section id="guide-video-section">
+  <div class="container">
+    <h2 class="section-title">A Complete Guide to Video AI</h2>
+    <div class="card-grid">
+      <!-- Card 1 -->
+      <article class="guide-card">
+        <img src="images/guide-card-1.avif" alt="AI Copilot camera system" />
+        <div class="card-content">
+          <h3>AI Copilot: Smarter Surveillance</h3>
+          <p>Upgrade your camera system with adaptive AI that learns and evolves with your environment.</p>
+          <a href="#" class="card-link">Read More</a>
         </div>
-        <div id="guide-video-card-container">
-          <!-- 1 -->
-          <div id="guide-video-card-box">
-            <img src="images/guide-video-blog 1.webp" alt="Guide Image" />
-            <h3>AI Copilot: Turning Every Camera into a Smart Observer</h3>
-            <p>An intelligent assistant that enhances your cameras—adapting to your needs and learning over time.</p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-          <!-- end -->
-          <!-- 2 -->
-          <div id="guide-video-card-box">
-            <img src="images/guide-video-blog 1.webp" alt="Guide Image" />
-            <h3>AI Copilot: Turning Every Camera into a Smart Observer</h3>
-            <p>An intelligent assistant that enhances your cameras—adapting to your needs and learning over time.</p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-          <!-- end -->
-          <!-- 3 -->
-          <div id="guide-video-card-box">
-            <img src="images/guide-video-blog 1.webp" alt="Guide Image" />
-            <h3>AI Copilot: Turning Every Camera into a Smart Observer</h3>
-            <p>An intelligent assistant that enhances your cameras—adapting to your needs and learning over time.</p>
-            <a href="#" class="read-more">Read More</a>
-          </div>
-          <!-- end -->
+      </article>
+      <!-- Card 2 -->
+      <article class="guide-card">
+        <img src="images/guide-card-2.avif" alt="Real-Time Video Analytics" />
+        <div class="card-content">
+          <h3>Real-Time Video Intelligence</h3>
+          <p>Extract actionable insights from video streams using cutting-edge AI models.</p>
+          <a href="#" class="card-link">Read More</a>
         </div>
-      </div>
+      </article>
+      <!-- Card 3 -->
+      <article class="guide-card">
+        <img src="images/guide-card-3.avif" alt="AI for Security Systems" />
+        <div class="card-content">
+          <h3>AI in Security Systems</h3>
+          <p>Explore how AI is transforming physical security with behavior detection and automation.</p>
+          <a href="#" class="card-link">Read More</a>
+        </div>
+      </article>
     </div>
+  </div>
+</section>
+
     <!-- Guide Video Section End -->
 
     <!-- Action Section -->
-    <div id="action-section-main-container">
-      <div id="action-section-inner-container">
-        <h2>Discover What Eagle Lens Can Do</h2>
-        <a href="Spot-Nattive.html" style="text-decoration: none">
-          <button>Request A Demo</button></a
-        >
-      </div>
-    </div>
+    <section id="eagle-cta-section">
+  <div class="cta-content">
+    <h2>Discover What <span class="highlight">Eagle Lens</span> Can Do</h2>
+    <a href="Spot-Nattive.html" class="cta-button">Request a Demo</a>
+  </div>
+</section>
+
     <!-- Action Section End -->
 
     <!-- Footer -->
