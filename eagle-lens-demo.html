@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eagle Lens Demo</title>
+
+    <link rel="shortcut icon" href="images/Footer-Logo.png" type="image/x-icon">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="eagle-lens-demo.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav>
+      <div>
+        <div id="logo-container">
+          <img src="images/logo.png" alt="" />
+        </div>
+       <ul id="nav-list">
+  <li data-target="live-container">Broadcast</li>
+  <li>Discover</li>
+  <li>Updates</li>
+  <li>Analytics</li>
+  <li>Share</li>
+  <li data-target="intelligence-container">Data</li>
+  <li data-target="maintain-container">Help</li>
+  <li>Alerts</li>
+  <li>Preferences</li>
+</ul>
+
+        <div id="nav-right-container">
+          <img src="https://img.icons8.com/?size=100&id=43752&format=png&color=737373" alt="" />
+          <p>Profile</p>
+        </div>
+      </div>
+    </nav>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const navList = document.getElementById("nav-list");
+        const containers = document.querySelectorAll(".content-container");
+        navList.addEventListener("click", (e) => {
+          const target = e.target.getAttribute("data-target");
+          if (!target) return;
+          containers.forEach((container) => {
+            if (container.id === target) {
+              container.style.display = "block";
+            } else {
+              container.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
+    <!-- Navbar End -->
+
+    <div id="live-container" class="content-container">
+      <div id="live-main-container">
+        <!-- Left Container -->
+        <div id="live-left-container">
+          <!-- hidden Container -->
+          <div id="live-left-hidden-container">
+            <div id="live-left-hidden-inner-container">
+              <h2>Watch <span>Now</span></h2>
+              <p>Stream footage from any connected camera. Choose a recent one or select from the list or map on the right panel.</p>
+            </div>
+
+          </div>
+
+          <!-- Video Container -->
+          <div id="live-left-video-main-container">
+            <div id="live-left-video-inner-container">
+              <div id="live-left-video-top-container">
+                <h2>Watch <span>Live</span></h2>
+                <p>Recent Live Stream</p>
+              </div>
+              <div id="live-left-video-bottom-container">
+                <div id="live-left-video-bottom-container-top">
+                  <h3 id="video-title">
+                    Garage View
+                    <img
+                      src="https://img.icons8.com/?size=100&id=EpwgBizRWig8&format=png&color=737373"
+                      alt=""
+                    />
+                    <span>Florida</span>
+                  </h3>
+                  <div id="live-left-video-bottom-container-top-right">
+                    <p>HD</p>
+                    <span>Remote</span>
+                  </div>
+                </div>
+                <div id="live-left-video-bottom-container-bottom">
+                  <video
+                    id="main-video"
+                    src="videos/hero-section-bg.mp4"
+                    muted
+                    autoplay
+                    controls
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Container -->
+        <div id="live-right-container">
+  <button id="drawer-toggle">&#10095;</button>
+  <div id="drawer-content">
+    <h3>📷 Available Cameras</h3>
+    <ul>
+      <!-- 1 -->
+      <li
+        class="camera-item active"
+        data-video-src="Home Video 1.mp4"
+        data-title="Garage Feed"
+        data-location="Florida"
+      >
+        <div id="drawer-content-box-img-container">
+          <img src="https://i.ytimg.com/vi/zBBVnq20HFU/maxresdefault.jpg" alt="Camera Thumbnail" />
+        </div>
+        <div id="drawer-content-box-text-container">
+          <h6>Garage Feed</h6>
+          <p>Florida</p>
+          <span>Active</span>
+        </div>
+      </li>
+      <!-- 2 -->
+      <li
+        class="camera-item"
+        data-video-src="header-bg.mp4"
+        data-title="Front Entry"
+        data-location="California"
+      >
+        <div id="drawer-content-box-img-container">
+          <img src="https://media.istockphoto.com/id/1200131542/photo/cctv-surveillance-security-camera-transmit-a-video-and-audio-signal-to-a-wireless-receiver.jpg?s=612x612&w=0&k=20&c=zulIgLgWR3Tr4q9Pao7qPSM5aCgZSJ027zjPDFbM3Gs=" alt="Camera Thumbnail" />
+        </div>
+        <div id="drawer-content-box-text-container">
+          <h6>Front Entry</h6>
+          <p>California</p>
+          <span>Active</span>
+        </div>
+      </li>
+      <!-- 3 -->
+      <li
+        class="camera-item"
+        data-video-src="Home Video 1.mp4"
+        data-title="Back Garden"
+        data-location="Texas"
+      >
+        <div id="drawer-content-box-img-container">
+          <img src="https://media.gettyimages.com/id/471146494/video/surveillance-footage-of-a-car-being-broken-into.jpg?s=640x640&k=20&c=J1ln-0NsuiOkFcB1rTjinhfPnQCNDLJtaoSShuIsDgo=" alt="Camera Thumbnail" />
+        </div>
+        <div id="drawer-content-box-text-container">
+          <h6>Back Garden</h6>
+          <p>Texas</p>
+          <span>Active</span>
+        </div>
+      </li>
+      <!-- 4 -->
+      <li
+        class="camera-item"
+        data-video-src="header-bg.mp4"
+        data-title="Main House"
+        data-location="Maldives"
+      >
+        <div id="drawer-content-box-img-container">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGA4h1w47Vt-EYt6NmOftC8PRi4dNMRh0FeGsbAxgamGOz8TKif4QQ_0inxPAQRbhlUfY&usqp=CAU" alt="Camera Thumbnail" />
+        </div>
+        <div id="drawer-content-box-text-container">
+          <h6>Main House</h6>
+          <p>Maldives</p>
+          <span>Active</span>
+        </div>
+      </li>
+      <!-- 5 -->
+      <li
+        class="camera-item"
+        data-video-src="Home Video 1.mp4"
+        data-title="Street View"
+        data-location="Rozhok"
+      >
+        <div id="drawer-content-box-img-container">
+          <img src="https://i.ytimg.com/vi/7gWSLRPo2Ao/maxresdefault.jpg" alt="Camera Thumbnail" />
+        </div>
+        <div id="drawer-content-box-text-container">
+          <h6>Street View</h6>
+          <p>Rozhok</p>
+          <span>Active</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const toggleBtn = document.getElementById("drawer-toggle");
+          const rightContainer = document.getElementById(
+            "live-right-container"
+          );
+          const drawerContent = document.getElementById("drawer-content");
+          const videoElement = document.getElementById("main-video");
+          const titleElement = document.getElementById("video-title");
+          const cameraItems = document.querySelectorAll(".camera-item");
+          const loadCamera = (li) => {
+            const videoSrc = li.getAttribute("data-video-src");
+            const title = li.getAttribute("data-title");
+            const location = li.getAttribute("data-location");
+            videoElement.src = videoSrc;
+            videoElement.load();
+            titleElement.innerHTML = `${title} <img src="https://img.icons8.com/?size=100&id=EpwgBizRWig8&format=png&color=737373" alt=""> <span>${location}</span>`;
+            cameraItems.forEach((item) => item.classList.remove("active"));
+            li.classList.add("active");
+          };
+          cameraItems.forEach((li) => {
+            li.addEventListener("click", () => loadCamera(li));
+          });
+          if (cameraItems.length > 0) {
+            loadCamera(cameraItems[0]);
+          }
+          toggleBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            rightContainer.classList.toggle("open");
+          });
+          document.addEventListener("click", (event) => {
+            if (
+              rightContainer.classList.contains("open") &&
+              !drawerContent.contains(event.target) &&
+              !toggleBtn.contains(event.target)
+            ) {
+              rightContainer.classList.remove("open");
+            }
+          });
+        });
+      </script>
+
+      <div id="live-overview-main-container">
+  <div id="live-overview-inner-container">
+    <div id="live-overview-details-container">
+      <div id="live-overview-date-time-contaier">
+        <li>
+          <p>
+            Begins <br />
+            Monday, July 4<br />
+            2025 <br />
+            <span>7:00 PM</span>
+          </p>
+        </li>
+        <li>
+          <p>
+            Ends <br />
+            Monday, July 4<br />
+            2025 <br />
+            <span>8:00 PM</span>
+          </p>
+        </li>
+      </div>
+      <div id="live-overview-intelligence-container">
+        <img src="images/Logo.png" alt="Detection Icon" />
+        <h6>Activity</h6>
+        <h5>Human</h5>
+        <h4>Car</h4>
+      </div>
+    </div>
+    <div id="live-overview-clip-segment-container">
+      <h6>Video Highlights</h6>
+    </div>
+    <div id="live-overview-screenshot-container">
+      <img src="https://i.ytimg.com/vi/zBBVnq20HFU/maxresdefault.jpg" alt="">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN1B1Opct8T4Wf0Qh_HPbwCw9yqTxsghi4HuM4S5Y100g51dxaPqYPHgqRGugsjsPPnPE&usqp=CAU" alt="">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOIhITTzZmvJuu2u5hhIqCABrmC88h7PW1uNaPTqemg1_HvO5Fbg76dCexgPXZCIjVbvE&usqp=CAU" alt="">
+      <img src="https://media.gettyimages.com/id/471146494/video/surveillance-footage-of-a-car-being-broken-into.jpg?s=640x640&k=20&c=J1ln-0NsuiOkFcB1rTjinhfPnQCNDLJtaoSShuIsDgo=" alt="">
+      <img src="https://i.ytimg.com/vi/7gWSLRPo2Ao/maxresdefault.jpg" alt="">
+      <img src="https://i.ytimg.com/vi/UUrHVTtc2uw/mqdefault.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+      <!-- First Onload Popup -->
+      <div id="Onload-popup" class="Onload-popup" style="display: none">
+        <div class="Onload-popup-overlay"></div>
+        <div class="Onload-popup-box">
+          <h2 class="Onload-heading">
+            Get Ready to Explore <span>Eagle Lens</span>!
+          </h2>
+          <p class="Onload-subheading">
+            Discover how our AI Camera System transforms businesses:
+          </p>
+          <ul class="Onload-list">
+            <li>Unify all locations on one dashboard</li>
+            <li>Resolve incidents quickly and efficiently</li>
+            <li>Unlock hidden gaps and operational efficiencies</li>
+            <li>Easily maintain and scale your camera network</li>
+          </ul>
+          <p class="Onload-note">
+            Note: Demo may have slower load times and fewer features than the
+            actual product.
+          </p>
+          <button id="Onload-close-btn" class="Onload-button">Let’s Go!</button>
+          <div class="Onload-powered">
+            Powered by <strong>Eagle Lens</strong>
+          </div>
+        </div>
+      </div>
+      <script>
+        window.addEventListener("load", function () {
+          const popup = document.getElementById("Onload-popup");
+          popup.style.display = "flex";
+
+          document
+            .getElementById("Onload-close-btn")
+            .addEventListener("click", function () {
+              popup.style.display = "none";
+            });
+        });
+      </script>
+
+      <!--First Onload Popup -->
+
+      <!-- Second Drawer Popup -->
+      <div id="Drawer-popup" class="Drawer-popup">
+        <div class="Drawer-popup-overlay"></div>
+        <div class="Drawer-popup-box">
+          <p>Click on arrow to open side menu to show more Footages.</p>
+          <div>
+            <button id="Drawer-prev-btn" class="Drawer-button">Prev</button>
+            <button id="Drawer-next-btn" class="Drawer-button">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        window.addEventListener("load", function () {
+          const onloadPopup = document.getElementById("Onload-popup");
+          const drawerPopup = document.getElementById("Drawer-popup");
+          const drawerToggle = document.getElementById("drawer-toggle");
+          onloadPopup.style.display = "flex";
+
+          document
+            .getElementById("Onload-close-btn")
+            .addEventListener("click", function () {
+              onloadPopup.style.display = "none";
+              drawerPopup.style.display = "flex";
+            });
+          document
+            .getElementById("Drawer-prev-btn")
+            .addEventListener("click", function () {
+              drawerPopup.style.display = "none";
+              onloadPopup.style.display = "flex";
+            });
+          document
+            .getElementById("Drawer-next-btn")
+            .addEventListener("click", function () {
+              if (drawerToggle) {
+                drawerPopup.style.display = "none";
+                setTimeout(() => {
+                  drawerToggle.click();
+                }, 100);
+              } else {
+                console.warn("#drawer-toggle element not found!");
+              }
+            });
+        });
+      </script>
+      <!-- Second Drawer Popup -->
+
+      <!-- Third Select a Camera Popup -->
+      <div
+        id="Select-a-camera-popup"
+        class="Select-a-camera-popup"
+        style="display: none"
+      >
+        <div class="container">
+          <p>
+            Select a camera to instantly view live footage, remotely or on-site
+          </p>
+          <div class="button-group">
+            <button id="Select-camera-prev-btn" class="Select-camera-button">
+              Prev
+            </button>
+            <button id="Select-camera-next-btn" class="Select-camera-button">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        window.addEventListener("load", function () {
+          const onloadPopup = document.getElementById("Onload-popup");
+          const drawerPopup = document.getElementById("Drawer-popup");
+          const selectCameraPopup = document.getElementById(
+            "Select-a-camera-popup"
+          );
+          const drawerToggle = document.getElementById("drawer-toggle");
+          const hiddenContainer = document.getElementById(
+            "live-left-hidden-container"
+          );
+          const videoMainContainer = document.getElementById(
+            "live-left-video-main-container"
+          );
+          onloadPopup.style.display = "flex";
+          document
+            .getElementById("Onload-close-btn")
+            .addEventListener("click", function () {
+              onloadPopup.style.display = "none";
+              drawerPopup.style.display = "flex";
+            });
+          document
+            .getElementById("Drawer-prev-btn")
+            .addEventListener("click", function () {
+              drawerPopup.style.display = "none";
+              onloadPopup.style.display = "flex";
+            });
+          document
+            .getElementById("Drawer-next-btn")
+            .addEventListener("click", function () {
+              drawerPopup.style.display = "none";
+              selectCameraPopup.style.display = "flex";
+            });
+          document
+            .getElementById("Select-camera-prev-btn")
+            .addEventListener("click", function () {
+              selectCameraPopup.style.display = "none";
+              drawerPopup.style.display = "flex";
+            });
+          document
+            .getElementById("Select-camera-next-btn")
+            .addEventListener("click", function () {
+              selectCameraPopup.style.display = "none";
+              if (hiddenContainer.style.display === "flex") {
+                hiddenContainer.style.display = "none";
+                videoMainContainer.style.display = "flex";
+              } else {
+                hiddenContainer.style.display = "flex";
+                videoMainContainer.style.display = "none";
+              }
+              if (drawerToggle) {
+                drawerToggle.click();
+              } else {
+                console.warn("#drawer-toggle element not found!");
+              }
+            });
+        });
+      </script>
+      <!-- Third Select a Camera Popup -->
+
+      <!-- Fourth Video Popup  -->
+      <div id="Video-popup" class="Video-popup" style="display: none">
+        <div class="container">
+          <p>Search this camera to find any footage you need in seconds</p>
+          <div class="button-group">
+            <button id="Video-popup-prev-btn" class="Video-popup-button">
+              Prev
+            </button>
+            <button id="Video-popup-next-btn" class="Video-popup-button">
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <script>
+        window.addEventListener("load", function () {
+          const videoPopup = document.getElementById("Video-popup");
+          const selectCameraPopup = document.getElementById(
+            "Select-a-camera-popup"
+          );
+          const drawerToggle = document.getElementById("drawer-toggle");
+          const liveRightContainer = document.getElementById(
+            "live-right-container"
+          );
+          document
+            .getElementById("Select-camera-next-btn")
+            .addEventListener("click", function () {
+              selectCameraPopup.style.display = "none";
+              videoPopup.style.display = "flex";
+            });
+          document
+            .getElementById("Video-popup-prev-btn")
+            .addEventListener("click", function () {
+              videoPopup.style.display = "none";
+              selectCameraPopup.style.display = "flex";
+              if (liveRightContainer) {
+                liveRightContainer.style.display = "flex";
+              } else {
+                console.warn("live-right-container not found");
+              }
+              if (drawerToggle) {
+                drawerToggle.click();
+              } else {
+                console.warn("drawer-toggle button not found");
+              }
+              const hiddenContainer = document.getElementById(
+                "live-left-hidden-container"
+              );
+              const videoMainContainer = document.getElementById(
+                "live-left-video-main-container"
+              );
+              if (hiddenContainer && videoMainContainer) {
+                hiddenContainer.style.display = "flex";
+                videoMainContainer.style.display = "none";
+              }
+            });
+          document
+            .getElementById("Video-popup-next-btn")
+            .addEventListener("click", function () {
+              videoPopup.style.display = "none";
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+              });
+            });
+        });
+      </script>
+      <!-- Fourth Video Popup   End-->
+
+      <!-- Fifth Time Footage Popup -->
+      <div
+        id="Time-footage-popup-1"
+        class="Time-footage-popup"
+        style="display: none"
+      >
+        <div class="popup-container">
+          <p>You can easily choose the right time window for your footage</p>
+          <div class="buttons">
+            <button id="Time-footage-popup-prev-btn">Prev</button>
+            <button id="Time-footage-popup-next-btn">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        window.addEventListener("load", function () {
+          const videoPopup = document.getElementById("Video-popup");
+          const selectCameraPopup = document.getElementById(
+            "Select-a-camera-popup"
+          );
+          const timeFootagePopup = document.querySelector(
+            '[id^="Time-footage-popup-"]'
+          );
+          const drawerToggle = document.getElementById("drawer-toggle");
+          const liveRightContainer = document.getElementById(
+            "live-right-container"
+          );
+          document
+            .getElementById("Select-camera-next-btn")
+            .addEventListener("click", function () {
+              selectCameraPopup.style.display = "none";
+              videoPopup.style.display = "flex";
+            });
+          document
+            .getElementById("Video-popup-prev-btn")
+            .addEventListener("click", function () {
+              videoPopup.style.display = "none";
+              selectCameraPopup.style.display = "flex";
+              if (liveRightContainer) {
+                liveRightContainer.style.display = "flex";
+              }
+              if (drawerToggle) {
+                drawerToggle.click();
+              }
+              const hiddenContainer = document.getElementById(
+                "live-left-hidden-container"
+              );
+              const videoMainContainer = document.getElementById(
+                "live-left-video-main-container"
+              );
+              if (hiddenContainer && videoMainContainer) {
+                hiddenContainer.style.display = "flex";
+                videoMainContainer.style.display = "none";
+              }
+            });
+          document
+            .getElementById("Video-popup-next-btn")
+            .addEventListener("click", function () {
+              videoPopup.style.display = "none";
+              if (timeFootagePopup) {
+                timeFootagePopup.style.display = "flex";
+              }
+              window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth",
+              });
+            });
+          document
+            .getElementById("Time-footage-popup-prev-btn")
+            .addEventListener("click", function () {
+              if (timeFootagePopup) {
+                timeFootagePopup.style.display = "none";
+              }
+              videoPopup.style.display = "flex";
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            });
+          document
+            .getElementById("Time-footage-popup-next-btn")
+            .addEventListener("click", function () {
+              const timeFootagePopup = document.querySelector(
+                '[id^="Time-footage-popup-"]'
+              );
+              if (timeFootagePopup) {
+                timeFootagePopup.style.display = "none";
+              }
+            });
+        });
+      </script>
+      <!-- Fifth Time Footage Popup Emd -->
+
+      <!-- Sixth People Popup -->
+      <div id="People-Popup-1" class="People-Popup" style="display: none">
+        <div class="popup-container">
+          <p>
+            Select people search to view only clip segments that have people
+          </p>
+          <div class="buttons">
+            <button id="People-Popup-prev-btn">Prev</button>
+            <button id="People-Popup-next-btn">Next</button>
+          </div>
+        </div>
+      </div>
+      <script>
+        window.addEventListener("load", function () {
+          const videoPopup = document.getElementById("Video-popup");
+          const selectCameraPopup = document.getElementById(
+            "Select-a-camera-popup"
+          );
+          const timeFootagePopup = document.querySelector(
+            '[id^="Time-footage-popup-"]'
+          );
+          const peoplePopup = document.querySelector('[id^="People-Popup-"]');
+          document
+            .getElementById("Time-footage-popup-next-btn")
+            .addEventListener("click", function () {
+              if (timeFootagePopup) {
+                timeFootagePopup.style.display = "none";
+              }
+              if (peoplePopup) {
+                peoplePopup.style.display = "flex";
+              }
+            });
+          document
+            .getElementById("People-Popup-prev-btn")
+            .addEventListener("click", function () {
+              if (peoplePopup) {
+                peoplePopup.style.display = "none";
+              }
+              if (timeFootagePopup) {
+                timeFootagePopup.style.display = "flex";
+              }
+            });
+          document
+            .getElementById("People-Popup-next-btn")
+            .addEventListener("click", function () {
+              if (peoplePopup) {
+                peoplePopup.style.display = "none";
+              }
+            });
+        });
+      </script>
+      <!-- Sixth People Popup -->
+
+      <!-- /* Seventh Clip Segment Popup */ -->
+      <div
+        id="Clip-segment-popup-1"
+        class="Clip-segment-popup"
+        style="display: none"
+      >
+        <div class="popup-container">
+          <p>
+            View and manage clip segments captured during the selected timeframe
+          </p>
+          <div class="buttons">
+            <button id="Clip-segment-popup-prev-btn">Prev</button>
+            <button id="Clip-segment-popup-next-btn">Next</button>
+          </div>
+        </div>
+      </div>
+      <script>
+        window.addEventListener("load", function () {
+          const clipSegmentPopup = document.getElementById(
+            "Clip-segment-popup-1"
+          );
+          const peoplePopup = document.getElementById("People-Popup-1");
+          const peopleNextBtn = document.getElementById(
+            "People-Popup-next-btn"
+          );
+          if (peopleNextBtn) {
+            peopleNextBtn.addEventListener("click", function () {
+              if (peoplePopup) peoplePopup.style.display = "none";
+              if (clipSegmentPopup) clipSegmentPopup.style.display = "flex";
+            });
+          }
+          const clipPrevBtn = document.getElementById(
+            "Clip-segment-popup-prev-btn"
+          );
+          if (clipPrevBtn) {
+            clipPrevBtn.addEventListener("click", function () {
+              if (clipSegmentPopup) clipSegmentPopup.style.display = "none";
+              if (peoplePopup) peoplePopup.style.display = "flex";
+            });
+          }
+          const clipNextBtn = document.getElementById(
+            "Clip-segment-popup-next-btn"
+          );
+          if (clipNextBtn) {
+            clipNextBtn.addEventListener("click", function () {
+              if (clipSegmentPopup) clipSegmentPopup.style.display = "none";
+            });
+          }
+        });
+      </script>
+      <!-- /* Seventh Clip Segment Popup */ -->
+
+      <!-- Eighth Mid Popup -->
+   <div id="mid-popup-call" class="mid-popup-call" style="display: none">
+  <div class="popup-container">
+    <p>Need help or want to keep exploring?</p>
+    <div class="buttons">
+      <button id="book-call-btn">Schedule a Call</button>
+      <button id="continue-tour-btn">Resume Demo</button>
+    </div>
+  </div>
+</div>
+
+      <script>
+        window.addEventListener("load", function () {
+          const midPopup = document.getElementById("mid-popup-call");
+          const bookCallBtn = document.getElementById("book-call-btn");
+          const continueTourBtn = document.getElementById("continue-tour-btn");
+          const clipSegmentPopup = document.getElementById(
+            "Clip-segment-popup-1"
+          );
+          const clipNextBtn = document.getElementById(
+            "Clip-segment-popup-next-btn"
+          );
+          if (clipNextBtn) {
+            clipNextBtn.addEventListener("click", function () {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setTimeout(() => {
+                if (clipSegmentPopup) clipSegmentPopup.style.display = "none";
+                if (midPopup) midPopup.style.display = "flex";
+              }, 400);
+            });
+          }
+          if (bookCallBtn) {
+            bookCallBtn.addEventListener("click", function () {
+              window.open(
+                "https://api.whatsapp.com/send?phone=447463151997",
+                "_blank"
+              );
+            });
+          }
+          if (continueTourBtn) {
+            continueTourBtn.addEventListener("click", function () {
+              midPopup.style.display = "none";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+          }
+        });
+      </script>
+      <!-- Eighth Mid Popup -->
+
+      <!-- Ninth Intelligence Selection Popup -->
+      <div
+        id="intelligence-selection-popup"
+        class="intelligence-selection-popup"
+        style="display: none"
+      >
+        <div class="popup-container">
+          <p>Select Share</p>
+          <div class="buttons">
+            <button id="int-prev-btn">Prev</button>
+            <button id="int-next-btn">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        window.addEventListener("load", function () {
+          const midPopup = document.getElementById("mid-popup-call");
+          const intelligencePopup = document.getElementById(
+            "intelligence-selection-popup"
+          );
+          const intPrevBtn = document.getElementById("int-prev-btn");
+          const intNextBtn = document.getElementById("int-next-btn");
+          const intelligenceListItem = document.querySelector(
+            'li[data-target="intelligence-container"]'
+          );
+          const clipSegmentPopup = document.getElementById(
+            "Clip-segment-popup-1"
+          );
+          const clipNextBtn = document.getElementById(
+            "Clip-segment-popup-next-btn"
+          );
+          const bookCallBtn = document.getElementById("book-call-btn");
+          const continueTourBtn = document.getElementById("continue-tour-btn");
+          if (clipNextBtn) {
+            clipNextBtn.addEventListener("click", function () {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setTimeout(() => {
+                if (clipSegmentPopup) clipSegmentPopup.style.display = "none";
+                if (midPopup) midPopup.style.display = "flex";
+              }, 400);
+            });
+          }
+          if (bookCallBtn) {
+            bookCallBtn.addEventListener("click", function () {
+              window.open(
+                "https://api.whatsapp.com/send?phone=447463151997",
+                "_blank"
+              );
+            });
+          }
+          if (continueTourBtn) {
+            continueTourBtn.addEventListener("click", function () {
+              midPopup.style.display = "none";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setTimeout(() => {
+                intelligencePopup.style.display = "flex";
+              }, 500);
+            });
+          }
+          if (intPrevBtn) {
+            intPrevBtn.addEventListener("click", function () {
+              intelligencePopup.style.display = "none";
+              midPopup.style.display = "flex";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+          }
+          if (intNextBtn) {
+            intNextBtn.addEventListener("click", function () {
+              if (intelligenceListItem) {
+                intelligenceListItem.click();
+                intelligencePopup.style.display = "none";
+              }
+            });
+          }
+        });
+      </script>
+      <!-- Ninth Intelligence Selection Popup -->
+    </div>
+
+    <!-- intelligence-container -->
+    <div id="intelligence-container" class="content-container" style="display: none">
+      <div id="intelligence-header-main-container">
+  <div id="intelligence-header-inner-container">
+    <div id="intelligence-header-left-box">
+      <img src="images/Logo.png" alt="" />
+      <h2>Transform Video into Actionable Data.</h2>
+    </div>
+    <div id="intelligence-header-middle-box">
+      <h2>Vehicle Dwell Time</h2>
+      <p>
+        Optimize efficiency by tracking where vehicles stop and how long they remain idle.
+      </p>
+      <button>Create +</button>
+    </div>
+    <div id="intelligence-header-right-box">
+      <h2>Human Activity</h2>
+      <p>
+        Understand your space better by monitoring when and where people are detected.
+      </p>
+      <button>Create +</button>
+    </div>
+  </div>
+</div>
+
+      <!-- Dashboard Container -->
+    <div id="intelligence-header-dashboard-heading-container">
+      <div id="intelligence-header-dashboard-heading-inner-container">
+        <h2>Dashboards</h2>
+        <input type="search" placeholder="Search Here">
+      </div>
+    </div>
+
+    <div id="intelligence-header-dashboards-container">
+  <div id="intelligence-header-dashboards-container">
+  <div id="intelligence-header-dashboards-inner-container">
+    <div class="dashboard-box"><canvas id="chart1"></canvas></div>
+    <div class="dashboard-box"><canvas id="chart2"></canvas></div>
+    <div class="dashboard-box"><canvas id="chart3"></canvas></div>
+    <div class="dashboard-box"><canvas id="chart4"></canvas></div>
+    <div class="dashboard-box"><canvas id="chart5"></canvas></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+function createBlueChart(id, type = 'bar') {
+  const ctx = document.getElementById(id).getContext('2d');
+  new Chart(ctx, {
+    type: type,
+    data: {
+      labels: ['A', 'B', 'C', 'D'],
+      datasets: [{
+        label: 'Blue Dataset',
+        data: [12, 19, 3, 5],
+        backgroundColor: 'rgba(0, 123, 255, 0.6)', // blue
+        borderColor: 'rgba(0, 123, 255, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+}
+
+// Create 5 charts
+createBlueChart('chart1', 'bar');
+createBlueChart('chart2', 'line');
+createBlueChart('chart3', 'bar');
+createBlueChart('chart4', 'line');
+createBlueChart('chart5', 'bar');
+</script>
+</div>
+<!-- Dashboard Container  End-->
+
+<!-- Parking Lot Vehicle Analysis -->
+ <div id="Intelligence-Parking-lot-Analysis-Main-container">
+  <div id="Intelligence-Parking-lot-Analysis-inner-container">
+    <!-- Top -->
+    <div id="Intelligence-Parking-lot-Analysis-Top-container">
+      <img src="https://i.ytimg.com/vi/zBBVnq20HFU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB9PoQBqWEeWqfGOKLdSURu1Kr8Eg" alt="">
+      <div id="Intelligence-Parking-lot-Analysis-Top-left-container">
+        <h3>Parking Lot Vehicle Analysis</h3>
+        <hr>
+        <div id="Intelligence-Parking-lot-Analysis-Top-left-bottom-item-container">
+          <p>Camera <span>Parking Lot</span></p>
+          <p>Vehicle Idle <span>15 minutes</span></p>
+          <p>Location <span>California</span></p>
+          <p>Tracking <span>Daily 7PM to 8PM </span></p>
+        </div>
+      </div>
+    </div>
+    <!-- Middle -->
+    <div id="Intelligence-Parking-lot-Analysis-middle-container">
+      <!-- Header -->
+       <div id="Intelligence-Parking-lot-Analysis-middle-header">
+        <h4>Vehicles Idle Time</h4>
+        <select name="" id="">
+          <option value="">June 5 2025</option>
+        </select>
+        <div id="Intelligence-Parking-lot-Analysis-middle-header-right-container">
+          <p>Daily</p>
+          <p>Monthlu</p>
+          <p>Yearly</p>
+        </div>
+       </div>
+      <!-- Header End-->
+       <!-- Middle Dashboard Container -->
+        <div id="Intelligence-Parking-lot-Analysis-middle-dashboard-container">
+          <canvas id="parkingChart"></canvas>
+        </div>
+<script>
+  const ctx = document.getElementById('parkingChart').getContext('2d');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'],
+      datasets: [{
+        label: 'Vehicles Parked',
+        data: [12, 19, 8, 14, 6, 11, 9, 13, 7, 10, 15, 5, 17], // Example data
+        backgroundColor: 'rgba(0, 123, 255, 0.7)',
+        borderColor: 'rgba(0, 123, 255, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: true }
+      },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+        <!-- Middle Dashboard Container -->
+    </div>
+    <!-- Bottom -->
+    <div id="Intelligence-Parking-lot-Analysis-bottom-container">
+  <table id="intelligence-middle-table" class="intelligence-middle-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>ID No</th>
+        <th>Time Length</th>
+        <th>Day & Date of Entry</th>
+        <th>Day & Date of Exit</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Row 1 -->
+      <tr>
+        <td><img src="https://i.ytimg.com/vi/zBBVnq20HFU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB9PoQBqWEeWqfGOKLdSURu1Kr8Eg" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>001</td>
+        <td>2h 30m</td>
+        <td>Mon, 2025-06-01</td>
+        <td>Mon, 2025-06-01</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 2 -->
+      <tr>
+        <td><img src="https://cctvagent.com/wp-content/uploads/2019/08/D8_20190724174512906-300x176.jpg" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>002</td>
+        <td>1h 45m</td>
+        <td>Tue, 2025-06-02</td>
+        <td>Tue, 2025-06-02</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 3 -->
+      <tr>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUWWJUgpM9y-9E0Cw0V4OEaKISfpTet4P_DSVJRh9_z628HEyUPbiN-p0K8hdY4wgIc8E&usqp=CAU" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>003</td>
+        <td>3h 15m</td>
+        <td>Wed, 2025-06-03</td>
+        <td>Wed, 2025-06-03</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 4 -->
+      <tr>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvCbn48q4OwCd5IWVxSqXzjDQQZVbXK_x2lPQokh0eTyy14WnGHCc89R6UseMrUj4ogJ8&usqp=CAU" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>004</td>
+        <td>4h 00m</td>
+        <td>Thu, 2025-06-04</td>
+        <td>Thu, 2025-06-04</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 5 -->
+      <tr>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOIhITTzZmvJuu2u5hhIqCABrmC88h7PW1uNaPTqemg1_HvO5Fbg76dCexgPXZCIjVbvE&usqp=CAU" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>005</td>
+        <td>1h 20m</td>
+        <td>Fri, 2025-06-05</td>
+        <td>Fri, 2025-06-05</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 6 -->
+      <tr>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_5l8xeJNFoISu7vpiqZlLgQj9hXQG0_tG14VZEzvPqllPJDdy80NGrKRlawcYvgl-418&usqp=CAU" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>006</td>
+        <td>2h 10m</td>
+        <td>Sat, 2025-06-06</td>
+        <td>Sat, 2025-06-06</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+    </div>
+  </div>
+ </div>
+<!-- Parking Lot Vehicle Analysis End -->
+</div>
+
+<!-- Intelligence First Popup -->
+ <div class="intelligence-first-popup" style="display: none">
+  <div class="popup-container">
+    <p>
+      Intelligence dashboards help you unlock powerful new insights about your
+      physical operations
+    </p>
+    <div class="buttons">
+      <button id="Intelligence-first-prev-btn">Prev</button>
+      <button id="Intelligence-first-next-btn">Next</button>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("load", function () {
+    const midPopup = document.getElementById("mid-popup-call");
+    const intelligencePopup = document.getElementById("intelligence-selection-popup");
+    const intPrevBtn = document.getElementById("int-prev-btn");
+    const intNextBtn = document.getElementById("int-next-btn");
+    const intelligenceListItem = document.querySelector('li[data-target="intelligence-container"]');
+    const clipSegmentPopup = document.getElementById("Clip-segment-popup-1");
+    const clipNextBtn = document.getElementById("Clip-segment-popup-next-btn");
+    const bookCallBtn = document.getElementById("book-call-btn");
+    const continueTourBtn = document.getElementById("continue-tour-btn");
+    const firstPopup = document.querySelector(".intelligence-first-popup");
+    const firstPrevBtn = document.getElementById("Intelligence-first-prev-btn");
+    const firstNextBtn = document.getElementById("Intelligence-first-next-btn");
+    const liveListItem = document.querySelector('li[data-target="live-container"]');
+    if (clipNextBtn) {
+      clipNextBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setTimeout(() => {
+          if (clipSegmentPopup) clipSegmentPopup.style.display = "none";
+          if (midPopup) midPopup.style.display = "flex";
+        }, 400);
+      });
+    }
+    if (bookCallBtn) {
+      bookCallBtn.addEventListener("click", function () {
+        window.open("https://api.whatsapp.com/send?phone=447463151997", "_blank");
+      });
+    }
+    if (continueTourBtn) {
+      continueTourBtn.addEventListener("click", function () {
+        if (midPopup) midPopup.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setTimeout(() => {
+          if (intelligencePopup) intelligencePopup.style.display = "flex";
+        }, 500);
+      });
+    }
+    if (intPrevBtn) {
+      intPrevBtn.addEventListener("click", function () {
+        if (intelligencePopup) intelligencePopup.style.display = "none";
+        if (midPopup) midPopup.style.display = "flex";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    if (intNextBtn) {
+      intNextBtn.addEventListener("click", function () {
+        if (intelligencePopup) intelligencePopup.style.display = "none";
+        if (firstPopup) firstPopup.style.display = "flex";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (intelligenceListItem) intelligenceListItem.click();
+      });
+    }
+    if (firstPrevBtn) {
+      firstPrevBtn.addEventListener("click", function () {
+        if (firstPopup) firstPopup.style.display = "none";
+        if (intelligencePopup) intelligencePopup.style.display = "flex";
+        if (liveListItem) liveListItem.click();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    if (firstNextBtn) {
+      firstNextBtn.addEventListener("click", function () {
+        if (firstPopup) firstPopup.style.display = "none";
+      });
+    }
+  });
+</script>
+<!-- Intelligence First Popup  End-->
+
+<!-- Intelligence Second Popup  -->
+<div class="intelligence-second-popup" id="intelligence-second-popup" style="display: none">
+  <div class="popup-container">
+    <p>Select the Parking Lot Vehicle Analysis</p>
+    <div class="buttons">
+      <button id="Intelligence-second-prev-btn">Prev</button>
+      <button id="Intelligence-second-next-btn">Next</button>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("load", function () {
+    const midPopup = document.getElementById("mid-popup-call");
+    const intelligencePopup = document.getElementById("intelligence-selection-popup");
+    const intPrevBtn = document.getElementById("int-prev-btn");
+    const intNextBtn = document.getElementById("int-next-btn");
+    const intelligenceListItem = document.querySelector('li[data-target="intelligence-container"]');
+    const clipSegmentPopup = document.getElementById("Clip-segment-popup-1");
+    const clipNextBtn = document.getElementById("Clip-segment-popup-next-btn");
+    const bookCallBtn = document.getElementById("book-call-btn");
+    const continueTourBtn = document.getElementById("continue-tour-btn");
+    const firstPopup = document.querySelector(".intelligence-first-popup");
+    const firstPrevBtn = document.getElementById("Intelligence-first-prev-btn");
+    const firstNextBtn = document.getElementById("Intelligence-first-next-btn");
+    const secondPopup = document.getElementById("intelligence-second-popup");
+    const secondPrevBtn = document.getElementById("Intelligence-second-prev-btn");
+    const secondNextBtn = document.getElementById("Intelligence-second-next-btn");
+    const liveListItem = document.querySelector('li[data-target="live-container"]');
+    if (clipNextBtn) {
+      clipNextBtn.addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setTimeout(() => {
+          if (clipSegmentPopup) clipSegmentPopup.style.display = "none";
+          if (midPopup) midPopup.style.display = "flex";
+        }, 400);
+      });
+    }
+    if (bookCallBtn) {
+      bookCallBtn.addEventListener("click", function () {
+        window.open("https://api.whatsapp.com/send?phone=447463151997", "_blank");
+      });
+    }
+    if (continueTourBtn) {
+      continueTourBtn.addEventListener("click", function () {
+        if (midPopup) midPopup.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setTimeout(() => {
+          if (intelligencePopup) intelligencePopup.style.display = "flex";
+        }, 500);
+      });
+    }
+    if (intPrevBtn) {
+      intPrevBtn.addEventListener("click", function () {
+        if (intelligencePopup) intelligencePopup.style.display = "none";
+        if (midPopup) midPopup.style.display = "flex";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    if (intNextBtn) {
+      intNextBtn.addEventListener("click", function () {
+        if (intelligencePopup) intelligencePopup.style.display = "none";
+        if (firstPopup) firstPopup.style.display = "flex";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (intelligenceListItem) intelligenceListItem.click();
+      });
+    }
+    if (firstPrevBtn) {
+      firstPrevBtn.addEventListener("click", function () {
+        if (firstPopup) firstPopup.style.display = "none";
+        if (intelligencePopup) intelligencePopup.style.display = "flex";
+        if (liveListItem) liveListItem.click();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    if (firstNextBtn) {
+      firstNextBtn.addEventListener("click", function () {
+        if (firstPopup) firstPopup.style.display = "none";
+        if (secondPopup) secondPopup.style.display = "flex";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    if (secondPrevBtn) {
+      secondPrevBtn.addEventListener("click", function () {
+        if (secondPopup) secondPopup.style.display = "none";
+        if (firstPopup) firstPopup.style.display = "flex";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    if (secondNextBtn) {
+      secondNextBtn.addEventListener("click", function () {
+        if (secondPopup) secondPopup.style.display = "none";
+        window.scrollBy({ top: 800, behavior: "smooth" }); // Scrolls slightly down
+      });
+    }
+  });
+</script>
+
+<!-- Intelligence Second Popup  end-->
+
+<!-- Intelligence third Popup  -->
+<div id="intelligence-third-popup" class="intelligence-third-popup">
+  <div class="popup-container">
+    <p>Instantly turn insights into actions. Get daily, weekly, and monthly trends about vehicles at any of your locations</p>
+    <div class="buttons">
+      <button id="Intelligence-third-prev-btn">Prev</button>
+      <button id="Intelligence-third-next-btn">Next</button>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("load", function () {
+    const secondPopup = document.getElementById("intelligence-second-popup");
+    const secondNextBtn = document.getElementById("Intelligence-second-next-btn");
+    const thirdPopup = document.getElementById("intelligence-third-popup");
+    const thirdPrevBtn = document.getElementById("Intelligence-third-prev-btn");
+    const thirdNextBtn = document.getElementById("Intelligence-third-next-btn");
+    if (secondNextBtn) {
+      secondNextBtn.addEventListener("click", function () {
+        if (secondPopup) secondPopup.style.display = "none";
+        window.scrollBy({ top: 800, behavior: "smooth" });
+        setTimeout(() => {
+          if (thirdPopup) thirdPopup.style.display = "flex";
+        }, 500); 
+      });
+    }
+    if (thirdPrevBtn) {
+      thirdPrevBtn.addEventListener("click", function () {
+        if (thirdPopup) thirdPopup.style.display = "none";
+        if (secondPopup) secondPopup.style.display = "flex";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    if (thirdNextBtn) {
+      thirdNextBtn.addEventListener("click", function () {
+        if (thirdPopup) thirdPopup.style.display = "none";
+        window.scrollBy({ top: 500, behavior: "smooth" }); 
+      });
+    }
+  });
+</script>
+
+<!-- Intelligence third Popup  end-->
+
+<!-- Intelligence fourth Popup  -->
+ <div id="intelligence-fourth-popup">
+  <div class="popup-container">
+    <p>Relevant clips are also surfaced for visibility</p>
+    <div class="buttons">
+      <button id="Intelligence-fourth-prev-btn">Prev</button>
+      <button id="Intelligence-fourth-next-btn">Next</button>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("load", function () {
+    const thirdPopup = document.getElementById("intelligence-third-popup");
+    const thirdPrevBtn = document.getElementById("Intelligence-third-prev-btn");
+    const thirdNextBtn = document.getElementById("Intelligence-third-next-btn");
+    const fourthPopup = document.getElementById("intelligence-fourth-popup");
+    const fourthPrevBtn = document.getElementById("Intelligence-fourth-prev-btn");
+    const fourthNextBtn = document.getElementById("Intelligence-fourth-next-btn");
+    const secondPopup = document.getElementById("intelligence-second-popup");
+    const secondNextBtn = document.getElementById("Intelligence-second-next-btn");
+    if (secondNextBtn) {
+      secondNextBtn.addEventListener("click", function () {
+        if (secondPopup) secondPopup.style.display = "none";
+        window.scrollTo({ top: 800, behavior: "smooth" });
+        setTimeout(() => {
+          if (thirdPopup) thirdPopup.style.display = "flex";
+        }, 600);
+      });
+    }
+    if (thirdNextBtn) {
+      thirdNextBtn.addEventListener("click", function () {
+        if (thirdPopup) thirdPopup.style.display = "none";
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        setTimeout(() => {
+          if (fourthPopup) fourthPopup.style.display = "flex";
+        }, 600);
+      });
+    }
+    if (thirdPrevBtn) {
+      thirdPrevBtn.addEventListener("click", function () {
+        if (thirdPopup) thirdPopup.style.display = "none";
+        if (secondPopup) secondPopup.style.display = "flex";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+    if (fourthPrevBtn) {
+      fourthPrevBtn.addEventListener("click", function () {
+        if (fourthPopup) fourthPopup.style.display = "none";
+        window.scrollTo({ top: 300, behavior: "smooth" });
+        setTimeout(() => {
+          if (thirdPopup) thirdPopup.style.display = "flex";
+        }, 600);
+      });
+    }
+    if (fourthNextBtn) {
+      fourthNextBtn.addEventListener("click", function () {
+        if (fourthPopup) fourthPopup.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+  });
+</script>
+<!-- Intelligence fourth Popup  end-->
+
+<!-- Intelligence Fifth Popup -->
+ <div class="intelligence-fifth-popup" id="intelligence-fifth-popup">
+  <div class="popup-container">
+    <p>Select Alerts</p>
+    <div class="buttons">
+      <button id="Intelligence-fifth-prev-btn">Prev</button>
+      <button id="Intelligence-fifth-next-btn">Next</button>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("load", function () {
+    const thirdPopup = document.getElementById("intelligence-third-popup");
+    const fourthPopup = document.getElementById("intelligence-fourth-popup");
+    const fifthPopup = document.getElementById("intelligence-fifth-popup");
+    const fifthPrevBtn = document.getElementById("Intelligence-fifth-prev-btn");
+    const fifthNextBtn = document.getElementById("Intelligence-fifth-next-btn");
+    const fourthNextBtn = document.getElementById("Intelligence-fourth-next-btn");
+    if (fourthNextBtn) {
+      fourthNextBtn.addEventListener("click", function () {
+        if (fourthPopup) fourthPopup.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setTimeout(() => {
+          if (fifthPopup) fifthPopup.style.display = "flex";
+        }, 600);
+      });
+    }
+    if (fifthPrevBtn) {
+      fifthPrevBtn.addEventListener("click", function () {
+        if (fifthPopup) fifthPopup.style.display = "none";
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        setTimeout(() => {
+          if (fourthPopup) fourthPopup.style.display = "flex";
+        }, 600);
+      });
+    }
+    if (fifthNextBtn) {
+      fifthNextBtn.addEventListener("click", function () {
+        if (fifthPopup) fifthPopup.style.display = "none";
+        const maintainLi = document.querySelector('li[data-target="maintain-container"]');
+        if (maintainLi) {
+          maintainLi.click();
+        }
+      });
+    }
+  });
+</script>
+<!-- Intelligence Fifth Popup End -->
+    <!-- intelligence-container -->
+
+    <!-- maintain-container -->
+    <div id="maintain-container" class="content-container" style="display: none">
+      <div id="maintainance-main-container">
+        <div id="maintainance-inner-container">
+          <div id="maintainance-top-container">
+            <div id="maintainance-top-left">
+              <img src="https://img.icons8.com/?size=100&id=TF8VFG5swSDU&format=png&color=000000" alt="">
+              <h3>150 Cameras</h3>
+            </div>
+            <div id="maintainance-top-right">
+              <img src="https://img.icons8.com/?size=100&id=NLkQnaGNI6T7&format=png&color=000000" alt="">
+              <h3>11 Appliances</h3>
+            </div>
+          </div>
+          <div id="maintainance-bottom-container">
+             <table id="intelligence-middle-table" class="intelligence-middle-table">
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>ID No</th>
+        <th>Time Length</th>
+        <th>Day & Date of Entry</th>
+        <th>Day & Date of Exit</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Row 1 -->
+      <tr>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrbnQ2p_5R4BHaOH6Kq5MESY71LnJwwVEf5Q&s" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>001</td>
+        <td>2h 30m</td>
+        <td>Mon, 2025-06-01</td>
+        <td>Mon, 2025-06-01</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 2 -->
+      <tr>
+        <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvLXQbL9ezabusGDXehbGqFYOiT2hifTXcAA&s" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>002</td>
+        <td>1h 45m</td>
+        <td>Tue, 2025-06-02</td>
+        <td>Tue, 2025-06-02</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 3 -->
+      <tr>
+        <td><img src="https://cctvagent.com/wp-content/uploads/2019/08/D8_20190724174512906-300x176.jpg" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>003</td>
+        <td>3h 15m</td>
+        <td>Wed, 2025-06-03</td>
+        <td>Wed, 2025-06-03</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 4 -->
+      <tr>
+        <td><img src="https://i.ytimg.com/vi/9GgEylbHZRw/mqdefault.jpg" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>004</td>
+        <td>4h 00m</td>
+        <td>Thu, 2025-06-04</td>
+        <td>Thu, 2025-06-04</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      <!-- Row 5 -->
+      <tr>
+        <td><img src="https://i.ytimg.com/vi/zBBVnq20HFU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB9PoQBqWEeWqfGOKLdSURu1Kr8Eg" alt="Car" class="intelligence-middle-table-img"></td>
+        <td>005</td>
+        <td>1h 20m</td>
+        <td>Fri, 2025-06-05</td>
+        <td>Fri, 2025-06-05</td>
+        <td><button class="intelligence-middle-table-btn">To Play</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+     <!-- Maintainance First Popup -->
+<div class="maintainance-first-popup" id="maintainance-first-popup" style="display: none;">
+  <div class="popup-container">
+    <p>Never worry about missing footage again. See the connectivity status of all your cameras and get alerts if any cameras are disconnected.</p>
+    <div class="buttons">
+      <button id="maintainance-first-prev-btn">Prev</button>
+      <button id="maintainance-first-next-btn">Next</button>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("load", function () {
+    const thirdPopup = document.getElementById("intelligence-third-popup");
+    const fourthPopup = document.getElementById("intelligence-fourth-popup");
+    const fifthPopup = document.getElementById("intelligence-fifth-popup");
+    const fifthPrevBtn = document.getElementById("Intelligence-fifth-prev-btn");
+    const fifthNextBtn = document.getElementById("Intelligence-fifth-next-btn");
+    const fourthNextBtn = document.getElementById("Intelligence-fourth-next-btn");
+    const maintainFirstPopup = document.getElementById("maintainance-first-popup");
+    const maintainFirstNextBtn = document.getElementById("maintainance-first-next-btn");
+    const maintainFirstPrevBtn = document.getElementById("maintainance-first-prev-btn");
+    const maintainLi = document.querySelector('li[data-target="maintain-container"]');
+    const intelligenceLi = document.querySelector('li[data-target="intelligence-container"]');
+    if (fourthNextBtn) {
+      fourthNextBtn.addEventListener("click", function () {
+        if (fourthPopup) fourthPopup.style.display = "none";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setTimeout(() => {
+          if (fifthPopup) fifthPopup.style.display = "flex";
+        }, 600);
+      });
+    }
+    if (fifthPrevBtn) {
+      fifthPrevBtn.addEventListener("click", function () {
+        if (fifthPopup) fifthPopup.style.display = "none";
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+        setTimeout(() => {
+          if (fourthPopup) fourthPopup.style.display = "flex";
+        }, 600);
+      });
+    }
+    if (fifthNextBtn) {
+      fifthNextBtn.addEventListener("click", function () {
+        if (fifthPopup) fifthPopup.style.display = "none";
+        if (maintainLi) {
+          maintainLi.click();
+          setTimeout(() => {
+            if (maintainFirstPopup) {
+              maintainFirstPopup.style.display = "flex";
+              document.body.style.overflow = "hidden";
+            }
+          }, 500);
+        }
+      });
+    }
+    if (maintainFirstNextBtn) {
+      maintainFirstNextBtn.addEventListener("click", function () {
+        if (maintainFirstPopup) maintainFirstPopup.style.display = "none";
+        document.body.style.overflow = "auto";
+      });
+    }
+    if (maintainFirstPrevBtn) {
+      maintainFirstPrevBtn.addEventListener("click", function () {
+        if (maintainFirstPopup) maintainFirstPopup.style.display = "none";
+        document.body.style.overflow = "auto";
+        if (intelligenceLi) {
+          intelligenceLi.click();
+          setTimeout(() => {
+            if (fifthPopup) {
+              fifthPopup.style.display = "flex";
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }, 500);
+        }
+      });
+    }
+  });
+</script>
+<!-- Maintainance First Popup -->
+
+<!-- Maintainance LAst Popup -->
+ <div class="maintainance-last-popup" id="maintainance-last-popup" style="display: none;">
+  <div class="popup-container">
+    <p>Want to learn more about how Eagle Lens can help you build safer workplaces and smarter operations?</p>
+    <div class="buttons">
+      <a href="https://api.whatsapp.com/send?phone=447463151997" target="_blank">
+        <button>Check Pricing</button>
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener("load", function () {
+    const maintainFirstPopup = document.getElementById("maintainance-first-popup");
+    const maintainFirstNextBtn = document.getElementById("maintainance-first-next-btn");
+
+    const maintainLastPopup = document.getElementById("maintainance-last-popup");
+
+    // Show first popup on load
+    if (maintainFirstPopup) {
+      maintainFirstPopup.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    // When "Next" is clicked on the first popup
+    if (maintainFirstNextBtn) {
+      maintainFirstNextBtn.addEventListener("click", function () {
+        if (maintainFirstPopup) maintainFirstPopup.style.display = "none";
+
+        // Show the last popup
+        if (maintainLastPopup) {
+          maintainLastPopup.style.display = "flex";
+        }
+
+        document.body.style.overflow = "hidden"; // Keep background fixed
+      });
+    }
+
+    // (Optional) if you want to manually trigger the last popup elsewhere:
+    window.showMaintainanceLastPopup = function () {
+      if (maintainLastPopup) {
+        maintainLastPopup.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+    };
+  });
+</script>
+
+<!-- Maintainance LAst Popup End-->
+    <!-- maintain-container -->
+
+    <!-- Main Script for Display  -->
+    <script>
+      window.addEventListener("load", () => {
+        const hiddenContainer = document.getElementById(
+          "live-left-hidden-container"
+        );
+        const videoMainContainer = document.getElementById(
+          "live-left-video-main-container"
+        );
+        hiddenContainer.style.display = "flex";
+        videoMainContainer.style.display = "none";
+      });
+    </script>
+    <!-- Main Script for Display  -->
+
+    <!-- Mobile Screen not supported Script -->
+    <script>
+      function createMessage() {
+        let msg = document.getElementById("mobile-message");
+        if (!msg) {
+          msg = document.createElement("div");
+          msg.id = "mobile-message";
+          msg.textContent = "Demo not Supported on Mobile Screen";
+          Object.assign(msg.style, {
+            position: "fixed",
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",
+            backgroundColor: "white",
+            color: "red",
+            fontSize: "2rem",
+            fontWeight: "bold",
+            textAlign: "center",
+            paddingTop: "40vh",
+            zIndex: "9999",
+          });
+          document.body.appendChild(msg);
+        }
+        return msg;
+      }
+      function checkScreen() {
+        const msg = createMessage();
+        if (window.innerWidth < 800) {
+          Array.from(document.body.children).forEach((el) => {
+            if (el !== msg) el.style.display = "none";
+          });
+          msg.style.display = "block";
+        } else {
+          Array.from(document.body.children).forEach((el) => {
+            if (el !== msg) el.style.display = "";
+          });
+          msg.style.display = "none";
+        }
+      }
+      window.addEventListener("load", () => {
+        checkScreen();
+        setTimeout(checkScreen, 100);
+      });
+      window.addEventListener("resize", checkScreen);
+      const observer = new MutationObserver((mutations) => {
+        const msg = document.getElementById("mobile-message");
+        if (!msg && window.innerWidth < 800) {
+          createMessage();
+          checkScreen();
+        }
+      });
+
+      observer.observe(document.body, { childList: true });
+    </script>
+    <!-- Mobile Screen not supported Script -->
+  </body>
+</html>
